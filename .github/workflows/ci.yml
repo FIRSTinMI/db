@@ -29,5 +29,4 @@ jobs:
       - uses: supabase/setup-cli@v1
 
       # Test the migrations
-      - run: supabase init
       - run: supabase db start
