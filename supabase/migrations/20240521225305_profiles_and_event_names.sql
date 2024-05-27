@@ -7,7 +7,10 @@ create table "public"."profiles" (
 
 alter table "public"."profiles" enable row level security;
 
-alter table "public"."events" add column "name" text not null;
+alter table "public"."events" add column "name" text;
+update "public"."events" set "name" = '(No Name Specified)' where "name" is null;
+alter table "public"."events" alter column "name" set not null;
+
 
 CREATE UNIQUE INDEX profiles_pkey ON public.profiles USING btree (id);
 
