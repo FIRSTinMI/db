@@ -1,0 +1,1 @@
+alter table "public"."event_staffs" add permissions uuid[] not null default array[]::uuid[];
