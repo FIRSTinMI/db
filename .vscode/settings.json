@@ -6,8 +6,5 @@
   "deno.unstable": true,
   "[typescript]": {
     "editor.defaultFormatter": "denoland.vscode-deno"
-  },
-  "yaml.schemas": {
-    "https://json.schemastore.org/github-workflow.json": "file:///Users/evan/Projects/firstinmi.db/.github/workflows/deploy.yml"
   }
 }
