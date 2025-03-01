@@ -31,7 +31,7 @@ create view "public"."event_match_video_stats" with(security_invoker=true) as (
   ) as "numQualVideos",
   (
     select
-      array_agg(coalesce(mql.match_name, concat('Qual ', mql.match_number)))
+      array_agg(coalesce(mql.match_name, concat('Qual ', mql.match_number)) order by mql.match_number, mql.play_number)
     from
       matches as mql
     where
@@ -67,7 +67,7 @@ create view "public"."event_match_video_stats" with(security_invoker=true) as (
   ) as "numPlayoffVideos",
   (
     select
-      array_agg(coalesce(mpl.match_name, concat('Playoff ', mpl.match_number)))
+      array_agg(coalesce(mpl.match_name, concat('Playoff ', mpl.match_number)) order by mpl.match_number, mpl.play_number)
     from
       matches as mpl
     where
