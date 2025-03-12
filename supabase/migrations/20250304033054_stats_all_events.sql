@@ -96,4 +96,5 @@ create view "public"."event_match_video_stats" with(security_invoker=true) as (
     ) as "latePlayoffVideos"
     from
     events e
+    where e.is_official
 );
