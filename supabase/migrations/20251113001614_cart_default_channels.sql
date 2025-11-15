@@ -1,0 +1,1 @@
+alter table "public"."truck_routes" add column "streaming_config" jsonb;
