@@ -7,6 +7,7 @@ create table "public"."event_streams" (
     "platform" stream_platform not null,
     "channel" varchar(255) not null,
     "url" varchar(512),
+    "internal_id" varchar(255),
     "start_time" timestamp with time zone,
 );
 
