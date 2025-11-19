@@ -8,7 +8,7 @@ create table "public"."event_streams" (
     "channel" varchar(255) not null,
     "url" varchar(512),
     "internal_id" varchar(255),
-    "start_time" timestamp with time zone,
+    "start_time" timestamp with time zone
 );
 
 alter table "public"."event_streams" enable row level security;
