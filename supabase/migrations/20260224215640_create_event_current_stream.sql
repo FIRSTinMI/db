@@ -1,7 +1,7 @@
 alter table public.event_streams add column short_title varchar(150) null;
 
 drop view public.event_current_stream;
-create view public.event_current_stream as
+create view public.event_current_stream with (security_invoker = on) as
 with
   qid (
     event_id,
