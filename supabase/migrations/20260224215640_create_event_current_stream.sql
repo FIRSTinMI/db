@@ -125,15 +125,4 @@ select
     )
   end as url
 from
-  events e
-where
-  (
-    exists (
-      select
-        1
-      from
-        event_streams es
-      where
-        e.id = es.event_id
-    )
-  );
+  events e;
