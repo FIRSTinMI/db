@@ -50,6 +50,11 @@ select
     from
       start_time
   ) as year,
+  case
+    when e.sync_source = 'FtcEvents' then 'https://ftc-events.firstinspires.org/' || EXTRACT(year from start_time) || '/' || e.code
+    when e.sync_source = 'FrcEvents' then 'https://frc-events.firstinspires.org/' || EXTRACT(year from start_time) || '/' || e.code
+    when e.sync_source = 'BlueAlliance' then 'https://thebluealliance.com/event/' || e.code
+  end as event_info_url,
   start_time <= CURRENT_TIMESTAMP
   and end_time >= CURRENT_TIMESTAMP as is_current,
   case
